@@ -11,6 +11,23 @@ function run(t, input, output, opts = { }) {
         });
 }
 
+// saturation increase
+// brightness increase
+// hue movement
+
+// all the above, past max value
+// all the above, past min value
+
+// pass in a non-colour
+
+// all the above ran with:
+// - named color
+// - rgb color
+// - rgba color
+// - hex color
+// - variable name
+
+
 test('basic test', t => {
     return run(t, 'a{ }', 'a{ }', { });
 });
