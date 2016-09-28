@@ -1,6 +1,6 @@
 var postcss = require('postcss');
 
-module.exports = postcss.plugin('PLUGIN_NAME', function (opts) {
+module.exports = postcss.plugin('postcss-hsb-adjust', function (opts) {
     opts = opts || {};
 
     // Work with options here

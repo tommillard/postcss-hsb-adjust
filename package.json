@@ -1,19 +1,21 @@
 {
-  "name": "PLUGIN_NAME",
+  "name": "postcss-hsb-adjust",
   "version": "0.0.0",
-  "description": "PostCSS plugin PLUGIN_DESC",
+  "description": "PostCSS plugin n to adjust colours by either hue, saturation or brightness",
   "keywords": [
     "postcss",
     "css",
-    "postcss-plugin"KEYWORDS
+    "postcss-plugin",
+    "hsb",
+    "color"
   ],
-  "author": "AUTHOR_NAME <AUTHOR_EMAIL>",
+  "author": "Tom Millard <tommillard81@gmail.com>",
   "license": "MIT",
-  "repository": "GITHUB_NAME/PLUGIN_NAME",
+  "repository": "tommillard/postcss-hsb-adjust",
   "bugs": {
-    "url": "https://github.com/GITHUB_NAME/PLUGIN_NAME/issues"
+    "url": "https://github.com/tommillard/postcss-hsb-adjust/issues"
   },
-  "homepage": "https://github.com/GITHUB_NAME/PLUGIN_NAME",
+  "homepage": "https://github.com/tommillard/postcss-hsb-adjust",
   "dependencies": {
     "postcss": "^5.2.0"
   },

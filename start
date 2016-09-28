@@ -15,16 +15,18 @@ process.stdin.on('data', function (text) {
 });
 
 var questions = {
-    AUTHOR_NAME:  'Your name: ',
-    AUTHOR_EMAIL: 'Your email: ',
-    GITHUB_NAME:  'GitHub username: ',
-    PLUGIN_NAME:  'Plugin name: postcss-',
-    PLUGIN_DESC:  '\nFinish sentence with plugin description:\nPostCSS plugin ',
-    KEYWORDS:     '\nFinish plugin keywords:\npostcss, css, postcss-plugin, '
+    Tom Millard:  'Your name: ',
+    tommillard81@gmail.com: 'Your email: ',
+    tommillard:  'GitHub username: ',
+    postcss-hsb-adjust:  'Plugin name: postcss-',
+    n to adjust colours by either hue, saturation or brightness:  '\nFinish sentence with plugin description:\nPostCSS plugin ',
+    ,
+    "hsb",
+    "color":     '\nFinish plugin keywords:\npostcss, css, postcss-plugin, '
 };
 var autodetects = {
-    AUTHOR_NAME:  'git config user.name',
-    AUTHOR_EMAIL: 'git config user.email'
+    Tom Millard:  'git config user.name',
+    tommillard81@gmail.com: 'git config user.email'
 };
 var answers = { };
 
@@ -126,27 +128,31 @@ function nextQuestion() {
         });
 
     } else {
-        answers.PLUGIN_NAME = 'postcss-' + answers.PLUGIN_NAME;
-        answers.PLUGIN_TITLE = answers.PLUGIN_NAME
+        answers.postcss-hsb-adjust = 'postcss-' + answers.postcss-hsb-adjust;
+        answers.PostCSS Hsb Adjust = answers.postcss-hsb-adjust
             .replace(/-\w/g, function (str) {
                 return ' ' + str[1].toUpperCase();
             })
             .replace(/^postcss/, 'PostCSS');
-        answers.KEYWORDS = ',\n    ' + answers.KEYWORDS
+        answers.,
+    "hsb",
+    "color" = ',\n    ' + answers.,
+    "hsb",
+    "color"
             .split(',')
             .map(function (i) {
                 return '"' + i.trim() + '"';
             })
             .join(',\n    ');
 
-        var dir = path.join(__dirname, '..', answers.PLUGIN_NAME);
+        var dir = path.join(__dirname, '..', answers.postcss-hsb-adjust);
         copyFolderSync(__dirname, dir);
         fillFiles(dir);
         cleanRepo(dir, function () {
             initProject(dir, function () {
                 process.stdout.write(
                     '\nDone. Remove this dir and continue work in ' +
-                    '../' + answers.PLUGIN_NAME + '/\n');
+                    '../' + answers.postcss-hsb-adjust + '/\n');
                 process.exit(0);
             });
         });

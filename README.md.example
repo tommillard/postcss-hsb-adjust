@@ -1,10 +1,10 @@
-# PLUGIN_TITLE [![Build Status][ci-img]][ci]
+# PostCSS Hsb Adjust [![Build Status][ci-img]][ci]
 
-[PostCSS] plugin PLUGIN_DESC.
+[PostCSS] plugin n to adjust colours by either hue, saturation or brightness.
 
 [PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/GITHUB_NAME/PLUGIN_NAME.svg
-[ci]:      https://travis-ci.org/GITHUB_NAME/PLUGIN_NAME
+[ci-img]:  https://travis-ci.org/tommillard/postcss-hsb-adjust.svg
+[ci]:      https://travis-ci.org/tommillard/postcss-hsb-adjust
 
 ```css
 .foo {
@@ -21,7 +21,7 @@
 ## Usage
 
 ```js
-postcss([ require('PLUGIN_NAME') ])
+postcss([ require('postcss-hsb-adjust') ])
 ```
 
 See [PostCSS] docs for examples for your environment.

@@ -11,10 +11,6 @@ function run(t, input, output, opts = { }) {
         });
 }
 
-/* Write tests here
-
-test('does something', t => {
+test('basic test', t => {
     return run(t, 'a{ }', 'a{ }', { });
 });
-
-*/
