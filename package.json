@@ -9,6 +9,10 @@
     "hsb",
     "color"
   ],
+  "scripts": {
+    "postcss": "node node_modules/postcss",
+    "hsb": "postcss -u index.js"
+  },
   "author": "Tom Millard <tommillard81@gmail.com>",
   "license": "MIT",
   "repository": "tommillard/postcss-hsb-adjust",
@@ -20,6 +24,7 @@
     "postcss": "^5.2.0"
   },
   "devDependencies": {
+    "postcss": "^5.2.0",
     "ava": "^0.16.0",
     "eslint": "^3.4.0",
     "eslint-config-postcss": "^2.0.2"
