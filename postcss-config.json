@@ -1,0 +1,6 @@
+{
+    "local-plugins": true,
+    "postcss-hsb-adjust": {
+        "optionTest": "hello sailor!"
+    }
+}
