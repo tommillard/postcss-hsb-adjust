@@ -1,0 +1,95 @@
+.ex1 .colourSwatch {
+    background-color: #E68D8D;
+}
+
+.ex1 .colourSwatch:after {
+    background-color: rgb(255,156,156);
+}
+
+.ex2 .colourSwatch {
+    background-color: #928691;
+}
+
+.ex2 .colourSwatch:after {
+    background-color: rgb(121,111,120);
+}
+
+.ex3 .colourSwatch {
+    background-color: #027C8B;
+}
+
+.ex3 .colourSwatch:after {
+    background-color: rgb(4,227,255);
+}
+
+.ex4 .colourSwatch {
+    background-color: #513A5D;
+}
+
+.ex4 .colourSwatch:after {
+    background-color: rgb(0,0,0);
+}
+
+.ex5 .colourSwatch {
+    background-color: #E68D8D;
+}
+
+.ex5 .colourSwatch:after {
+    background-color: rgb(237,134,134);
+}
+
+.ex6 .colourSwatch {
+    background-color: #928691;
+}
+
+.ex6 .colourSwatch:after {
+    background-color: rgb(140,140,140);
+}
+
+.ex7 .colourSwatch {
+    background-color: #027C8B;
+}
+
+.ex7 .colourSwatch:after {
+    background-color: rgb(0,126,141);
+}
+
+.ex8 .colourSwatch {
+    background-color: #513A5D;
+}
+
+.ex8 .colourSwatch:after {
+    background-color: rgb(76,76,76);
+}
+
+.ex9 .colourSwatch {
+    background-color: #E68D8D;
+}
+
+.ex9 .colourSwatch:after {
+    background-color: rgb(230,186,141);
+}
+
+.ex10 .colourSwatch {
+    background-color: #928691;
+}
+
+.ex10 .colourSwatch:after {
+    background-color: rgb(141,134,146);
+}
+
+.ex11 .colourSwatch {
+    background-color: #027C8B;
+}
+
+.ex11 .colourSwatch:after {
+    background-color: rgb(17,2,139);
+}
+
+.ex12 .colourSwatch {
+    background-color: #513A5D;
+}
+
+.ex12 .colourSwatch:after {
+    background-color: rgb(58,70,93);
+}
