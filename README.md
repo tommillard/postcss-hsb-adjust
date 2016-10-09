@@ -23,7 +23,17 @@ The plugin takes two arguments, the base colour and the adjustment to be made.
 
 ## Example
 
-Given this input CSS:
+```css
+.foo {
+    a/* Input example */
+}
+```
+
+```css
+.foo {
+  /* Output example */
+}
+```
 
 ### Input
 ````
