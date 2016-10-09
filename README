@@ -8,7 +8,7 @@ This plugin allows a colour to be modified by an adjustment to either:
 - Saturation (0 - 100%)
 - Brightness (0 - 100%)
 
-You can see the effect of these changes [here]: https://github.com/postcss/postcss
+You can see the effect of these changes [here](https://github.com/postcss/postcss)
 
 ## Install
 ### NPM 
