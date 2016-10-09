@@ -8,7 +8,7 @@ This plugin allows a colour to be modified by an adjustment to either:
 - Saturation (0 - 100%)
 - Brightness (0 - 100%)
 
-You can see the effect of these changes [cssnano](http://cssnano.co)
+You can see a demo of these adjustments [here](https://tommillard.github.io/postcss-hsb-adjust/)
 
 ## Install
 ### NPM 
@@ -18,31 +18,10 @@ You can see the effect of these changes [cssnano](http://cssnano.co)
 ### Git
 `git clone https://github.com/tommmillard/postcss-hsb-adjust.git`
 
-
-## There be dragons!!
-**NOTE: At this point the plugin is in 0.0.1 release. That means it's been tested in my own dev bubble and little else. Use with caution for production!!**
-
-**NOTE 2: I intend to port this to TypeScript or Babel shortly for better backwards compatibility in older Node versions. Presently, you'll need to use a modern NODE version (I'm rocking v4.2.6 at time of writing)**
-
-## Overview
-The plugin takes 3 options: `remaining`, `extracted` and `extractors`. It processes your CSS, matches relevant rules (that you set in "extractors") and extracts them to the "extracted" file location. Rules that haven't matched are written to the "remaining" file location. Your existing file (the one that had both extracted and remaining in) continues to it's original location. That's it!
-
-**It is recommended that this plugin is used just before or just after your minifier (e.g. [cssnano](http://cssnano.co))**
+## Usage
+The plugin takes two arguments, the base colour and the adjustment to be made.
 
 ## Example
-Given this config:
-
-````
-"postcss-extract-to-file": {
-    "remaining": "./output/remaining.css",
-    "extracted": "./output/extracted.css",
-    "extractors": [
-        ".no-w3cflexbox",
-        ".no-svginhtml",
-        ".no-flex"
-    ]
-},
-````
 
 Given this input CSS:
 
