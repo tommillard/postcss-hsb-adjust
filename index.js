@@ -1,5 +1,6 @@
 var postcss = require('postcss');
-var parse = require('parse-color');
+var parseColor = require('parse-color');
+var parser = require("postcss-value-parser")
 
 module.exports = postcss.plugin('postcss-hsb-adjust', function () {
 
@@ -9,53 +10,62 @@ module.exports = postcss.plugin('postcss-hsb-adjust', function () {
     			return;
     		}
 
-    		var index = decl.value.indexOf('hsb-adjust(');
-    		var string = decl.value.slice(index);
-    		string = getInnards('(', ')', string);
-
-        if (!string) {
-    			return
-    		}
-
-    		var lastCommaIndex = string.lastIndexOf(",");
-
-    		var rootColour = string.substr(0, lastCommaIndex).trim();
-    		var adjustment = string.substr(lastCommaIndex+1).trim();
-
-    		var adjustmentType = adjustment.substr(0,1);
-    		var adjustmentAmount = getInnards('(', ')', adjustment);
-
-    		if(!adjustmentAmount || !adjustmentType) {
-          messageHelpers.message("Unable to find a valid adjustment", decl.source)
-    			return;
-    		}
-
-        adjustmentAmount = parseFloat(adjustmentAmount);
-
-        if(isNaN(adjustmentAmount)) {
-            messageHelpers.message("Adjustment amount is not a valid number", decl.source)
-            return;
-        }
-
-        var rootColour = parse(rootColour).rgba;
-            if(rootColour === undefined) {
-                messageHelpers.message("Unable to find a valid starting colour", decl.source)
-                return;
-            }
-
-            var newColour = [rootColour[0], rootColour[1], rootColour[2]];
-            var alpha = rootColour[3];
-
-            var newColour = processColour(newColour, adjustmentType, adjustmentAmount);
-
-            if(alpha && alpha < 1) {
-                decl.value = "rgba("+Math.round(newColour[0])+","+Math.round(newColour[1])+","+Math.round(newColour[2])+","+alpha+")";
-            } else {
-                decl.value = "rgb("+Math.round(newColour[0])+","+Math.round(newColour[1])+","+Math.round(newColour[2])+")";
-            }
+        decl.value = adjustDecl(decl.value);
     	})
     };
 });
+
+function adjustDecl(string) {
+  return parser(string).walk(function (node) {
+
+    if (node.type !== "function" || node.value !== "hsb-adjust") {
+      return
+    }
+    node.value = hsbAdjust(parser.stringify(node));
+    node.type = "word";
+    
+  }).toString();
+}
+
+function hsbAdjust(string) {
+  string = getInnards("(", ")", string);
+  var lastCommaIndex = string.lastIndexOf(",");
+
+  var rootColour = string.substr(0, lastCommaIndex).trim();
+  var adjustment = string.substr(lastCommaIndex+1).trim();
+
+  var adjustmentType = adjustment.substr(0,1);
+  var adjustmentAmount = getInnards('(', ')', adjustment);
+
+  if(!adjustmentAmount || !adjustmentType) {
+    // messageHelpers.message("Unable to find a valid adjustment", decl.source)
+    return;
+  }
+
+  adjustmentAmount = parseFloat(adjustmentAmount);
+
+  if(isNaN(adjustmentAmount)) {
+    // messageHelpers.message("Adjustment amount is not a valid number", decl.source)
+    return;
+  }
+
+  var rootColour = parseColor(rootColour).rgba;
+  if(rootColour === undefined) {
+    // messageHelpers.message("Unable to find a valid starting colour", decl.source)
+    return;
+  }
+
+  var newColour = [rootColour[0], rootColour[1], rootColour[2]];
+  var alpha = rootColour[3];
+
+  var newColour = processColour(newColour, adjustmentType, adjustmentAmount);
+
+  if(alpha && alpha < 1) {
+      return "rgba("+Math.round(newColour[0])+","+Math.round(newColour[1])+","+Math.round(newColour[2])+","+alpha+")";
+  } else {
+      return "rgb("+Math.round(newColour[0])+","+Math.round(newColour[1])+","+Math.round(newColour[2])+")";
+  }
+}
 
 function getInnards(start, end, string) {
   var stringStart = string.indexOf(start);
