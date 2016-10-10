@@ -1,6 +1,6 @@
 {
   "name": "postcss-hsb-adjust",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "PostCSS plugin n to adjust colours by either hue, saturation or brightness",
   "keywords": [
     "postcss",
@@ -10,7 +10,8 @@
     "color"
   ],
   "scripts": {
-    "test": "ava && eslint *.js"
+    "test": "ava && eslint *.js",
+    "release": "npmpub --no-release"
   },
   "author": "Tom Millard <tommillard81@gmail.com>",
   "license": "MIT",
