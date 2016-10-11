@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 
-## [0.1.1] - 2016-11-11
+## 0.1.1 - 2016-11-11
 ### Changed
 - Change log updated to new style.
 
