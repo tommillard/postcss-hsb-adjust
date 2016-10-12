@@ -5,8 +5,13 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 ### Changed
+- Fixed typo in description
 
 ### Removed
+
+## 0.1.4 - 2016-11-12
+### Changed
+- Version bump for release
 
 ## 0.1.3 - 2016-11-11
 ### Changed
