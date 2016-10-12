@@ -1,6 +1,6 @@
 {
   "name": "postcss-hsb-adjust",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "PostCSS plugin to adjust colours by either hue, saturation or brightness",
   "keywords": [
     "postcss",
